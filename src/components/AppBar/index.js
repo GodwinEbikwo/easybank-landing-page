@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
 import Logo from '../../images/logo.svg'
-import { Container, NavBar, CTAButton, HamburgerMenu, Overlay } from './styles'
+import { Container, NavBar, CTAButton, Overlay } from './styles'
 import { useWindowWidth } from '../../hooks/useWindowWidth'
+import { Spin as HamburgerMenu } from 'hamburger-react'
 
 export const AppBar = () => {
   const [isOpen, setOpen] = useState(false)
   const windowWidth = useWindowWidth()
 
-  console.log(windowWidth)
+  React.useEffect(() => {
+    windowWidth > 1024 ? setOpen(true) : setOpen(false)
+  }, [windowWidth])
+
   return (
     <Container>
       <img src={Logo} alt='Logo' />
 
-      <Overlay>
+      <Overlay visible={isOpen}>
         <NavBar>
           <a href='#'>Home</a>
           <a href='#'>About</a>

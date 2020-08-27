@@ -1,39 +1,41 @@
 import styled from 'styled-components'
-import Hamburger from 'hamburger-react'
 
 export const Container = styled.header`
-  height: auto;
+  height: 64px;
   width: 100%;
-  display: grid;
-  grid-template-areas:
-    'logo hamburger'
-    'overlay overlay';
+  display: flex;
+  padding: 0 24px;
+
   justify-content: space-between;
   align-items: center;
   font-family: 'Public Sans', sans-serif;
-
-  & img {
-    margin: 0 24px;
-    grid-area: logo;
-  }
+  position: relative;
 
   @media (min-width: 1024px) {
     height: 80px;
-    grid-template-areas: 'logo overlay cta-button';
-    grid-template-columns: 187px 1fr 211px;
+    padding: 0 165px;
   }
 `
 
 export const Overlay = styled.div`
-  grid-area: overlay;
-  display: flex;
+  transition: all 1s ease;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  display: ${({ visible }) => (visible ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #2d314d 0%,
+    rgba(45, 49, 77, 0.0001) 100%
+  );
+
   @media (min-width: 1024px) {
     background: #fff;
     height: 80px;
+    position: static;
   }
 `
 
@@ -42,9 +44,11 @@ export const NavBar = styled.nav`
   border-radius: 4px;
   margin: 24px;
   width: 100%;
+  padding: 32px 0px;
   @media (min-width: 1024px) {
     margin: 0;
     width: auto;
+    padding: 0;
   }
 
   & a {
@@ -54,6 +58,7 @@ export const NavBar = styled.nav`
     font-size: 18px;
     position: relative;
     text-align: center;
+
     @media (min-width: 1024px) {
       padding: 0 10px;
       margin-right: 30px;
@@ -70,7 +75,7 @@ export const NavBar = styled.nav`
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -25px;
+        bottom: -20px;
         background: #30c88f;
         height: 4px;
       }
@@ -107,11 +112,7 @@ export const CTAButton = styled.button`
     top: 0;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1240px) {
     display: block;
   }
-`
-
-export const HamburgerMenu = styled(Hamburger)`
-  grid-area: hamburger;
 `

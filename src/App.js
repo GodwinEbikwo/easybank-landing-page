@@ -7,6 +7,7 @@ function App () {
     <div>
       <GlobalStyle />
       <AppBar />
+      <hr></hr>
     </div>
   )
 }
