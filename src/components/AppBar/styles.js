@@ -5,11 +5,12 @@ export const Container = styled.header`
   width: 100%;
   display: flex;
   padding: 0 24px;
-
+  background: #fff;
   justify-content: space-between;
   align-items: center;
   font-family: 'Public Sans', sans-serif;
   position: relative;
+  z-index: 99;
 
   @media (min-width: 1024px) {
     height: 80px;
@@ -26,11 +27,7 @@ export const Overlay = styled.div`
   display: ${({ visible }) => (visible ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    180deg,
-    #2d314d 0%,
-    rgba(45, 49, 77, 0.0001) 100%
-  );
+  background: ${({ theme }) => theme.degradedBlack};
 
   @media (min-width: 1024px) {
     background: #fff;
@@ -45,6 +42,7 @@ export const NavBar = styled.nav`
   margin: 24px;
   width: 100%;
   padding: 32px 0px;
+
   @media (min-width: 1024px) {
     margin: 0;
     width: auto;
@@ -54,7 +52,7 @@ export const NavBar = styled.nav`
   & a {
     display: block;
     padding: 15px 35px;
-    color: #2d314d;
+    color: ${({ theme }) => theme.primaryText};
     font-size: 18px;
     position: relative;
     text-align: center;
@@ -63,11 +61,12 @@ export const NavBar = styled.nav`
       padding: 0 10px;
       margin-right: 30px;
       display: inline;
-      color: #9597a5;
+      color: ${({ theme }) => theme.secondaryText};
       font-size: 14px;
 
       &:hover {
-        color: #2d314d;
+        color: ${({ theme }) => theme.primaryText};
+        font-weight: 700;
       }
 
       &:hover:after {
@@ -75,44 +74,10 @@ export const NavBar = styled.nav`
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -20px;
-        background: #30c88f;
+        bottom: -30px;
+        background: ${({ theme }) => theme.green};
         height: 4px;
       }
     }
-  }
-`
-
-export const CTAButton = styled.button`
-  grid-area: 'cta-button';
-  background: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%);
-  border-radius: 22px;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  width: 163px;
-  height: 44px;
-  line-height: 28px;
-  outline: none;
-  position: relative;
-  transition: opacity 1s linear;
-  display: none;
-
-  &:hover:after {
-    background: #fff;
-    bottom: 0;
-    content: '';
-    left: 0;
-    opacity: 0.4;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  @media (min-width: 1240px) {
-    display: block;
   }
 `

@@ -4,6 +4,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     width: 100vw;
     min-height: 100vh;
+    background: #FAFAFA;
+    overflow: hidden;
   }
   * {
     margin: 0;

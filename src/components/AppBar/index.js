@@ -1,39 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Logo from '../../images/logo.svg'
-import { Container, NavBar, CTAButton, Overlay } from './styles'
+import { Container, NavBar, Overlay } from './styles'
 import { useWindowWidth } from '../../hooks/useWindowWidth'
 import { Spin as HamburgerMenu } from 'hamburger-react'
+import { ThemeContext } from 'styled-components'
+import { Button } from '../Button'
 
 export const AppBar = () => {
-  const [isOpen, setOpen] = useState(false)
+  const theme = useContext(ThemeContext)
+  const [showMenu, setShowMenu] = useState(false)
   const windowWidth = useWindowWidth()
 
   React.useEffect(() => {
-    windowWidth > 1024 ? setOpen(true) : setOpen(false)
+    windowWidth > 1024 ? setShowMenu(true) : setShowMenu(false)
   }, [windowWidth])
 
   return (
     <Container>
       <img src={Logo} alt='Logo' />
 
-      <Overlay visible={isOpen}>
-        <NavBar>
-          <a href='#'>Home</a>
-          <a href='#'>About</a>
-          <a href='#'>Contact</a>
-          <a href='#'>Blog</a>
-          <a href='#'>Careers</a>
+      <Overlay visible={showMenu} theme={theme}>
+        <NavBar theme={theme}>
+          <a href='#home'>Home</a>
+          <a href='#about'>About</a>
+          <a href='#contact'>Contact</a>
+          <a href='#blog'>Blog</a>
+          <a href='#careers'>Careers</a>
         </NavBar>
       </Overlay>
 
-      <CTAButton> Request Invite </CTAButton>
+      {windowWidth >= 1124 && <Button theme={theme}> Request Invite </Button>}
 
       {windowWidth < 1024 && (
         <HamburgerMenu
-          toggled={isOpen}
-          toggle={setOpen}
+          toggled={showMenu}
+          toggle={setShowMenu}
           size={18}
-          color='#2D314D'
+          color={theme.primaryText}
         />
       )}
     </Container>
