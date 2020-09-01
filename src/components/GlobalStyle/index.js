@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100vw;
     min-height: 100vh;
     background: #FAFAFA;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   * {
     margin: 0;

@@ -1,8 +1,5 @@
 import React, { useContext } from 'react'
-import image768 from '../../images/phone-768.png'
-import image576 from '../../images/phone-576.png'
-
-import { Main, TextContainer, ImageContainer } from './styles'
+import { Main, TextContainer, Ilustration } from './styles'
 import { ThemeContext } from 'styled-components'
 import { Button } from '../Button'
 
@@ -21,12 +18,7 @@ export const Hero = () => {
         <Button />
       </TextContainer>
 
-      <ImageContainer>
-        <picture>
-          <source srcset={image768} media='(min-width: 500px)'></source>
-          <img src={image576} alt='Ilustracion de telefono' />
-        </picture>
-      </ImageContainer>
+      <Ilustration />
     </Main>
   )
 }
