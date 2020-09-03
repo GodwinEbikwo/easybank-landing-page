@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 import DesktopImage from '../../images/bg-intro-desktop.svg'
 import MobilImage from '../../images/bg-intro-mobile.svg'
-import image768 from '../../images/phone-768.png'
-import image576 from '../../images/phone-576.png'
 
 export const Main = styled.main`
   display: grid;
-  width: 100%;
+  width: 100vw;
   height: auto;
   align-items: start;
   justify-content: center;
@@ -29,69 +27,88 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Public Sans', sans-serif;
   padding: 24px;
   margin: 0 auto;
   width: 100%;
   max-width: 447px;
-  & h2 {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 300;
-    color: ${({ theme }) => theme.primaryText};
-  }
-
-  & p {
-    text-align: center;
-    margin: 24px 0 36px 0;
-    font-size: 18px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.secondaryText};
-  }
-
   @media (min-width: 768px) {
-    justify-content: space-between;
-    padding: 24px;
+    max-width: 647px;
     margin: 0;
     align-items: flex-start;
+  }
 
-    & p,
-    h2 {
-      text-align: left;
-    }
+  @media (min-width: 1024px) {
+    margin: 0;
+    padding: 0;
+    padding-left: 165px;
   }
 `
 
-export const Ilustration = styled.div`
-  height: 300px;
-  max-height: 776px;
+export const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
-  background: no-repeat center 100%/100% url(${image576}),
-    no-repeat top right/100% url(${MobilImage});
+  height: 282px;
+  background: no-repeat right top/100% 100% url(${MobilImage});
+  display: flex;
+  justify-content: center;
 
-  @media (min-width: 327px) {
-    height: 500px;
-    background: no-repeat center 0/100% url(${image576}),
-      no-repeat top right/100% url(${MobilImage});
+  img {
+    position: absolute;
+    width: 100%;
+    top: -40%;
+    object-fit: fit;
   }
 
-  @media (min-width: 420px) {
-    background: no-repeat center 100%/90% url(${image576}),
-      no-repeat top right/100% url(${MobilImage});
-  }
-  @media (min-width: 540px) {
-    background: no-repeat center 100%/90% url(${image576}),
-      no-repeat bottom right/100% url(${MobilImage});
+  @media (min-width: 334px) {
+    height: 400px;
+
+    img {
+      width: 90%;
+      top: -20%;
+    }
   }
 
-  @media (min-width: 640px) {
-    height: 700px;
-    background: no-repeat center 100%/90% url(${image576}),
-      no-repeat top right/100% url(${MobilImage});
+  @media (min-width: 450px) {
+    height: 600px;
+  }
+
+  @media (min-width: 678px) {
+    img {
+      top: -35%;
+    }
   }
 
   @media (min-width: 768px) {
-    background: no-repeat center 84%/100% url(${image768}),
-      8% 48% url(${DesktopImage});
+    height: 600px;
+    background: no-repeat 8% 57% url(${DesktopImage});
+    background-size: fill;
+    display: block;
+
+    img {
+      background-size: auto;
+      top: -5%;
+      right: -10%;
+    }
+  }
+
+  @media (min-width: 894px) {
+    background-size: none;
+
+    background-position: left 57%;
+    img {
+      top: -5%;
+    }
+  }
+
+  @media (min-width: 894px) {
+    background-position: left 87%;
+  }
+
+  @media (min-width: 1200px) {
+    img {
+      right: -10%;
+      top: -20%;
+      max-width: 680px;
+    }
   }
 `

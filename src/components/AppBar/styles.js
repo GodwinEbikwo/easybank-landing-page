@@ -10,7 +10,7 @@ export const Container = styled.header`
   align-items: center;
   font-family: 'Public Sans', sans-serif;
   position: relative;
-  z-index: 99;
+  z-index: 30;
 
   @media (min-width: 1024px) {
     height: 80px;

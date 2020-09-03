@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Logo from '../../images/logo.svg'
 import { Container, NavBar, Overlay } from './styles'
 import { useWindowWidth } from '../../hooks/useWindowWidth'
@@ -11,7 +11,7 @@ export const AppBar = () => {
   const [showMenu, setShowMenu] = useState(false)
   const windowWidth = useWindowWidth()
 
-  React.useEffect(() => {
+  useEffect(() => {
     windowWidth > 1024 ? setShowMenu(true) : setShowMenu(false)
   }, [windowWidth])
 
