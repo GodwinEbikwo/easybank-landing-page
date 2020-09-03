@@ -21,7 +21,7 @@ export const TextContainer = styled.div`
 export const Benefits = styled.div`
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 255px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
 
   @media (min-width: 768px) {

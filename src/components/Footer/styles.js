@@ -7,7 +7,8 @@ export const Container = styled.footer`
 `
 
 export const Wrapper = styled.div`
-  padding: 40px 78px;
+  width: 100%;
+  padding: 40px 24px;
   display: grid;
   grid-template-areas:
     'logoContainer'
@@ -16,6 +17,10 @@ export const Wrapper = styled.div`
 
   grid-template-columns: 1fr;
   grid-gap: 32px;
+
+  @media (min-width: 300px) {
+    padding: 40px 78px;
+  }
 
   @media (min-width: 768px) {
     grid-template-areas: 'logoContainer navContainer ButtonContainer';
