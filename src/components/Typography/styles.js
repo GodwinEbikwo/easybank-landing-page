@@ -59,6 +59,7 @@ export const Title4 = styled.h4`
   line-height: 20px;
   letter-spacing: -0.285714px;
   color: ${({ color, theme }) => (color ? color : theme.primaryText)};
+  text-align: left;
 
   &:hover {
     color: ${({ theme }) => theme.green};
@@ -100,6 +101,7 @@ export const Body3 = styled.p`
   line-height: 18px;
   letter-spacing: -0.203125px;
   color: ${({ color, theme }) => (color ? color : theme.secondaryText)};
+  text-align: left;
 `
 
 export const Caption = styled.span`
@@ -109,4 +111,5 @@ export const Caption = styled.span`
   line-height: 18px;
   letter-spacing: -0.15625px;
   color: ${({ color, theme }) => (color ? color : theme.secondaryText)};
+  text-align: left;
 `

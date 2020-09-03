@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './styles/theme'
 import styled from 'styled-components'
 import { ListOfBenefits } from './components/ListOfBenefits'
+import { ListOfArticles } from './components/ListOfArticles'
 
 const Container = styled.div`
   width: 100vw;
@@ -21,6 +22,7 @@ function App () {
         <AppBar />
         <Hero />
         <ListOfBenefits />
+        <ListOfArticles />
       </Container>
     </ThemeProvider>
   )
