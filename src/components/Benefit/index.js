@@ -1,11 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container } from './styles'
-import { ThemeContext } from 'styled-components'
 import { useWindowWidth } from '../../hooks/useWindowWidth'
 import { Typography } from '../Typography'
 
 export const Benefit = ({ icon, title, description }) => {
-  const theme = useContext(ThemeContext)
   const [margin, setMargin] = useState({ top: '0', bottom: '0' })
   const windowWidth = useWindowWidth()
 

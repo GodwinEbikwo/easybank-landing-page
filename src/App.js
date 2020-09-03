@@ -7,6 +7,7 @@ import { theme } from './styles/theme'
 import styled from 'styled-components'
 import { ListOfBenefits } from './components/ListOfBenefits'
 import { ListOfArticles } from './components/ListOfArticles'
+import { Footer } from './components/Footer'
 
 const Container = styled.div`
   width: 100vw;
@@ -23,6 +24,7 @@ function App () {
         <Hero />
         <ListOfBenefits />
         <ListOfArticles />
+        <Footer />
       </Container>
     </ThemeProvider>
   )

@@ -16,7 +16,7 @@ export const AppBar = () => {
   }, [windowWidth])
 
   return (
-    <Container>
+    <Container id='home'>
       <img src={Logo} alt='Logo' />
 
       <Overlay visible={showMenu} theme={theme}>

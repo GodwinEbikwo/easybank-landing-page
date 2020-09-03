@@ -17,6 +17,7 @@ export const CtaButton = styled.button`
   transition: all 1s linear;
 
   &:hover:after {
+    border-radius: 22px;
     background: #fff;
     bottom: 0;
     content: '';

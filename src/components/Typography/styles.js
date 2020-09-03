@@ -62,6 +62,7 @@ export const Title4 = styled.h4`
   text-align: left;
 
   &:hover {
+    cursor: pointer;
     color: ${({ theme }) => theme.green};
   }
 `
